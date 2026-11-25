@@ -1,0 +1,50 @@
+# CLAUDE.md
+
+Healthline Nutrition — Expo UI template inspired by [MyFitnessPal](https://play.google.com/store/apps/details?id=com.myfitnesspal.android) and [Healthline’s nutrition-app roundup](https://www.healthline.com/nutrition/top-iphone-android-apps).
+
+Created with `create-expo-app` (Expo 57). UI only — no API. AI scan / voice screens are placeholders.
+
+## Commands
+
+```bash
+npm run web        # localhost:8081
+npm run web:alt    # localhost:8082
+npm run android
+npm run ios
+npm start
+```
+
+## Architecture
+
+```
+src/
+├── config/colors.js
+├── context/ThemeContext.js, DiaryContext.js
+├── data/foods.js, recipes.js
+├── navigation/AppNavigator.js, MainTabs.js
+├── components/   # ProgressRing, MacroBar, MealSection, AiBadge
+└── screens/      # Dashboard, Diary, Discover, Progress, More,
+                  # AddFood, FoodDetail, ScanFood, VoiceLog, RecipeDetail
+```
+
+Local diary state only. Scan + voice can demo-log sample foods; wire models later.
+
+## Theme
+
+`useTheme()` — light/dark **and** brand color (`blue` | `green`):
+
+- Default brand: Healthline **blue** `#0070E0`
+- Optional: **green** `#4A8245` (dark `#2A4E2A`, deepest `#233525`) (More → Color theme)
+- Prefer `const { colors, themeColors: c, isDark } = useTheme()` so brand switches re-render
+- AI purple `#6C5CE7` (shared)
+
+## Fonts
+
+- **SN Pro** — body / UI (`fontWeight` auto-maps via `FontProvider`)
+- **Nova Round** — display titles (`fontFamily: FONT.nova`)
+
+```js
+import { FONT } from '../config/fonts';
+// headline
+style={{ fontFamily: FONT.nova }}
+```

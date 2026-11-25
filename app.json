@@ -1,0 +1,161 @@
+{
+  "expo": {
+    "name": "Health line Nutrition",
+    "slug": "healthline",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "icon": "./assets/icon.png",
+    "userInterfaceStyle": "automatic",
+    "backgroundColor": "#F8F9FA",
+    "ios": {
+      "supportsTablet": true,
+      "requireFullScreen": true,
+      "backgroundColor": "#F8F9FA",
+      "infoPlist": {
+        "UISupportedInterfaceOrientations": [
+          "UIInterfaceOrientationPortrait"
+        ],
+        "UISupportedInterfaceOrientations~ipad": [
+          "UIInterfaceOrientationPortrait"
+        ],
+        "NSCameraUsageDescription": "Allow Health line to use the camera to scan meals and food barcodes.",
+        "NSPhotoLibraryUsageDescription": "Allow Health line to upload meal photos from your gallery for AI nutrition estimates."
+      }
+    },
+    "android": {
+      "package": "com.healthline.nutrition",
+      "softwareKeyboardLayoutMode": "resize",
+      "backgroundColor": "#F8F9FA",
+      "permissions": [
+        "android.permission.CAMERA",
+        "android.permission.POST_NOTIFICATIONS",
+        "android.permission.health.READ_STEPS",
+        "android.permission.ACTIVITY_RECOGNITION"
+      ],
+      "blockedPermissions": [
+        "android.permission.READ_MEDIA_IMAGES",
+        "android.permission.READ_MEDIA_VIDEO"
+      ],
+      "adaptiveIcon": {
+        "backgroundColor": "#FFFFFF",
+        "foregroundImage": "./assets/android-icon-foreground.png",
+        "backgroundImage": "./assets/android-icon-background.png",
+        "monochromeImage": "./assets/android-icon-monochrome.png"
+      }
+    },
+    "web": {
+      "favicon": "./assets/favicon.png",
+      "bundler": "metro",
+      "meta": {
+        "viewport": "width=device-width, initial-scale=1, maximum-scale=1, viewport-fit=cover"
+      }
+    },
+    "plugins": [
+      "expo-font",
+      "expo-system-ui",
+      [
+        "expo-splash-screen",
+        {
+          "image": "./assets/splash-icon.png",
+          "backgroundColor": "#FFFFFF",
+          "imageWidth": 200,
+          "resizeMode": "contain",
+          "dark": {
+            "image": "./assets/splash-icon.png",
+            "backgroundColor": "#FFFFFF"
+          }
+        }
+      ],
+      [
+        "expo-camera",
+        {
+          "cameraPermission": "Allow Health line to use the camera to scan meals and food barcodes.",
+          "microphonePermission": "Allow Health line to access your microphone for voice logging.",
+          "recordAudioAndroid": false
+        }
+      ],
+      [
+        "expo-image-picker",
+        {
+          "photosPermission": "Allow Health line to upload meal photos from your gallery for AI nutrition estimates."
+        }
+      ],
+      [
+        "expo-notifications",
+        {
+          "icon": "./assets/android-icon-monochrome.png",
+          "color": "#0070E0",
+          "defaultChannel": "default"
+        }
+      ],
+      "expo-status-bar",
+      [
+        "expo-screen-orientation",
+        {
+          "initialOrientation": "PORTRAIT_UP"
+        }
+      ],
+      [
+        "expo-secure-store",
+        {
+          "configureAndroidBackup": true
+        }
+      ],
+      "react-native-health-connect",
+      [
+        "expo-local-authentication",
+        {
+          "faceIDPermission": "Allow Health line to use Face ID so you can sign in quickly."
+        }
+      ],
+      [
+        "expo-audio",
+        {
+          "recordAudioAndroid": false,
+          "enableBackgroundPlayback": false
+        }
+      ],
+      [
+        "expo-sensors",
+        {
+          "motionPermission": "Allow Health line to count your steps so it can track your daily activity."
+        }
+      ],
+      "@react-native-google-signin/google-signin",
+      [
+        "expo-speech-recognition",
+        {
+          "microphonePermission": "Allow Health line to use the microphone so you can log meals by voice.",
+          "speechRecognitionPermission": "Allow Health line to turn your voice into text to log meals."
+        }
+      ],
+      [
+        "expo-build-properties",
+        {
+          "android": {
+            "usesCleartextTraffic": true,
+            "enableMinifyInReleaseBuilds": true,
+            "enableShrinkResourcesInReleaseBuilds": true,
+            "buildArchs": [
+              "arm64-v8a"
+            ],
+            "minSdkVersion": 26
+          }
+        }
+      ]
+    ],
+    "extra": {
+      "eas": {
+        "projectId": "d7229970-d1e5-4fb4-bf94-806cd4e5b9dd"
+      }
+    },
+    "runtimeVersion": {
+      "policy": "appVersion"
+    },
+    "updates": {
+      "url": "https://u.expo.dev/d7229970-d1e5-4fb4-bf94-806cd4e5b9dd",
+      "checkAutomatically": "NEVER",
+      "fallbackToCacheTimeout": 0
+    }
+  }
+}

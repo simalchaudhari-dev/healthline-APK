@@ -1,0 +1,28 @@
+# Keep EAS upload + fingerprint lean (not shipped into JS, but slows/clutters archive)
+HTML/
+.claude/
+.expo/
+.cursor/
+agent-transcripts/
+
+# Old / unused assets
+assets/OLD_*
+
+# Local & docs (not needed in Android binary)
+.env
+.env*.local
+AGENTS.md
+CLAUDE.md
+LICENSE
+*.md
+
+# Native folders if generated locally
+/android
+/ios
+
+# Firebase service account (private key) — uploaded to Expo credentials, never shipped in a build
+*firebase-adminsdk*.json
+*service-account*.json
+
+# Provided at build time by the GOOGLE_SERVICES_JSON EAS file variable (see app.config.js)
+google-services.json
